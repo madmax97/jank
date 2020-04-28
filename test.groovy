@@ -1,4 +1,3 @@
-def host = 'localhost'
 pipeline {
     agent{node('master')}
     stages {
@@ -7,13 +6,13 @@ pipeline {
                     branches: [[name: '*/master']],
                     doGenerateSubmoduleConfigurations: false,
                     extensions: [[$class: 'RelativeTargetDirectory',
-                    relativeTargetDir: 'auto']],
+                    relativeTargetDir: 'test']],
                     submoduleCfg: [],
-                    userRemoteConfigs: [[credentialsId: '',url: '']]])
+                    userRemoteConfigs: [[credentialsId: 'IlyaBurakGit',url: 'https://github.com/ilyaburak/study_jenkins.git']]])
                 
       }
         
        
     }
-    }
+    
 }
