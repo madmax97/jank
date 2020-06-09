@@ -20,15 +20,7 @@ pipeline {
                 }
             }
         }
-        stage ('Run image') {
-          steps{
-            script{
-                sh "whoami"
-            sh "docker run -it -d webapp"
-          }
-          }
-
-      }
+        
     }
 
     
