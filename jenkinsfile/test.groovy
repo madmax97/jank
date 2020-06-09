@@ -24,7 +24,7 @@ pipeline {
           steps{
             script{
                 sh "whoami"
-            sh "sudo docker run -it -d webapp"
+            sh "docker run -it -d webapp"
           }
           }
 
