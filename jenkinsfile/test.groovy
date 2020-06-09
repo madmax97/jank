@@ -1,3 +1,4 @@
+    
 pipeline {
     agent{node('master')}
     stages {
@@ -17,6 +18,13 @@ pipeline {
                               submoduleCfg                     : [],
                               userRemoteConfigs                : [[credentialsId: 'IlyaBurakGit', url: 'https://github.com/ilyaburak/study_jenkins.git']]])
                 }
+            }
+        }
+    }
+    stage ('Run image') {
+        steps{
+            script{
+                sh "docker run -it -d webapp"
             }
         }
     }
