@@ -21,8 +21,13 @@ pipeline {
             }
         }
         stage ('Run image') {
-      sh "docker run -it -d webapp"
-    }
+          steps{
+            script{
+            sh "docker run -it -d webapp"
+          }
+          }
+
+      }
     }
 
     
