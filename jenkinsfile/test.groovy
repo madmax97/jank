@@ -16,7 +16,7 @@ pipeline {
                               extensions                       : [[$class           : 'RelativeTargetDirectory',
                                                                    relativeTargetDir: 'auto']],
                               submoduleCfg                     : [],
-                              userRemoteConfigs                : [[credentialsId: 'ShushenachevMaxGit', url: 'https://github.com/ilyaburak/study_jenkins.git']]])
+                              userRemoteConfigs                : [[credentialsId: 'ShushenachevMaxGit', url: 'https://github.com/madmax97/jank.git']]])
                 }
             }
         }
@@ -25,7 +25,7 @@ pipeline {
                 script{
                     sh "docker build ${WORKSPACE}/auto -t webapp"
                     sh "docker run -d webapp"
-                    sh "docker exec -it webapp "df -h > ~/proc""
+                    // sh "docker exec -it webapp "df -h > ~/proc""
                 }
             }
         }
