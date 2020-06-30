@@ -56,7 +56,6 @@ pipeline {
                         usernameVariable: 'username',
                         passwordVariable: 'password')
                     ]) {
-                        sh "echo '${password}' | sudo -S docker exec -t max_d bash -c 'df -h > /stat/v_file.txt'"
                         sh "echo '${password}' | sudo -S docker exec -t max_d bash -c 'fdgfdgfdh'"                       
                     }
                 }
