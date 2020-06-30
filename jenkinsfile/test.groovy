@@ -14,6 +14,7 @@ pipeline {
                             sh "echo '${password}' | sudo -S docker stop max_d"
                             sh "echo '${password}' | sudo -S docker container rm max_d"
                         } catch (Exception e) {
+                            currentBuild.result = 'FAILURE'
                             print 'problem'
                         
                         }
@@ -56,7 +57,8 @@ pipeline {
                         usernameVariable: 'username',
                         passwordVariable: 'password')
                     ]) {
-                        sh "echo '${password}' | sudo -S docker exec -t max_d bash -c 'fdgfdgfdh'"                       
+                        sh "echo '${password}' | sudo -S docker exec -t nginx_alhassan bash -c 'df -h > /stat/stats.txt'"
+			            sh "echo '${password}' | sudo -S docker exec -t nginx_alhassan bash -c 'top -n 1 -b >> /stat/stats.txt'"                     
                     }
                 }
             }
