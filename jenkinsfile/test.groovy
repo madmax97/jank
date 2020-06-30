@@ -15,6 +15,7 @@ pipeline {
                             sh "echo '${password}' | sudo -S docker container rm max_d"
                         } catch (Exception e) {
                             print 'problem'
+                        
                         }
 
                     }
